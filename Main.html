@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-widht,initial-scale=1.0">
+</head>
+<body>
+    <div class="primeira">
+        <h2>João Cavalcanti</h2>
+        <img class="pfp" src="pp.JFIF" width="70%" height="70%" alt="Avatar"> <br>
+
+        <p>
+        Ciência da computação<br>
+        1° período<br><br>
+        </p>
+
+        <p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <b>UFPE</b><br>
+        <ins><b>2021.1</b></ins>
+        </p>
+    </div>
+
+    <div class="segunda" >
+        <ul class="Menu">
+            <li><a href="Sobre.html">Sobre</a></li>
+            <li><a href="Main.html">Projetos</a></li>
+        </ul>
+        <br>
+        <h1><i>Meus projetos:</i></h1>
+        <br>
+        <p>
+            <h4> Web Scrapper para valores de ações</h4>
+
+            &nbsp&nbsp&nbspEsse programa foi feito para entrar em sites com informações de valores de ações específicas, assim conseguindo armazenar seus valores e calcular seu patrimônio baseado neles.<br><br><br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img class="projeto" src="webscrapper.png" />
+            <br><br>
+            A modificação do código para incluir mais ações pode ser feita com facilidade, apenas incluindo o endereço do site(o código foi feito baseado no infomoney) e suas cordenadas na tela de display.
+            <br><br>
+            <a href="webscrapper.py" download="webscrapper">O código pode ser baixado aqui alt <alt ="Arquivo não encontrado"></a><br><br>
+            Você também pode visualiza-lo abaixo.
+            <p class="codigo">         
+                import bs4<br>
+                import time<br>
+                from _datetime import datetime<br>
+                import requests<br>
+                import pygame<br>
+                from bs4 import BeautifulSoup as Soup<br><br>
+                <br>
+                def Sprice(url):<br>
+                r = requests.get(url)<br>
+                soup = bs4.BeautifulSoup(r.text, "html.parser")<br>
+                p = soup.find_all('div', {'class': 'value'})[0].text<br>
+                A = p[1:6].replace(',', '.')<br>
+                A = A.replace('Re', '')<br>
+                price = float(A)<br>
+                print(price)<br>
+                return price<br>
+                <br>
+                def Name(name):<br>
+                font = pygame.font.SysFont("Times New Roman, Arial", 20)<br>
+                Text = font.render( name, True, (0, 0, 0))<br>
+                return Text<br>
+                def Pname(text, width, height):<br>
+                return window.blit( text, (width, height))<br>
+                <br>
+                #===============================<br>
+                <br>
+                try:<br>
+                pygame.init()<br>
+                except:<br>
+                print('ERROR')<br>
+                <br>
+                #===============================<br>
+                <br>
+                height = 580<br>
+                width = 340<br>
+                print(datetime.hour)<br>
+                window = pygame.display.set_mode((width, height))<br>
+                pygame.display.set_caption("Stocks")<br>
+                window.fill((255, 255, 255))<br>
+                clock = pygame.time.Clock()<br>
+                fps = 30<br>
+                on = True<br>
+                k = 1000<br>
+                <br>
+                #===============================<br>
+                <br>
+                Text0 = Name("Net Worth: ")<br>
+                Pname(Text0, 125, 100)<br>
+                Text1 = Name("Engie: ")<br>
+                Pname(Text1, 140, 160)<br>
+                Text2 = Name("Fleury: ")<br>
+                Pname(Text2, 138, 220)<br>
+                Text3 = Name("Ambev: ")<br>
+                Pname(Text3, 136, 280)<br>
+                Text4 = Name("Itaúsa: ")<br>
+                Pname(Text4, 137, 340)<br>
+                Text5 = Name("Magalu: ")<br>
+                Pname(Text5, 137, 400)<br>
+                Text6 = Name("EnergBr: ")<br>
+                Pname(Text6, 130, 460)<br>
+                Text7 = Name("Previsão: ")<br>
+                Pname(Text7, 128, 520)<br>
+                <br>
+                #===============================<br>
+                <br>
+                P_engie = Sprice('https://www.infomoney.com.br/cotacoes/engie-brasil-egie3/grafico/')<br>
+                P_fleury = Sprice("https://www.infomoney.com.br/cotacoes/fleury-flry3/")<br>
+                P_ambev = Sprice("https://www.infomoney.com.br/cotacoes/ambev-abev3/grafico/")<br>
+                P_itausa = Sprice("https://www.infomoney.com.br/cotacoes/itausa-itsa4/grafico/")<br>
+                P_Magalu = Sprice("https://www.infomoney.com.br/cotacoes/magazine-luiza-mglu3/grafico/")<br>
+                P_Enbr = Sprice("https://www.infomoney.com.br/cotacoes/energias-br-enbr3/grafico/")<br>
+                <br>
+                #===============================<br>
+                <br>
+                Net_Worth = P_engie * 2 + P_fleury * 11 + P_ambev * 4 + P_itausa * 9 + P_Enbr * 5 + P_Magalu * 10<br>
+                Pre = Net_Worth * (1.1)<br>
+                pre5 = Pre * (1.1)**4<br>
+                <br>
+                #===============================<br>
+                <br>
+                Text00,Text10, Text20, Text30, Text40, Text50, Text60, Text70, Text80 = Name(str("%.2f" % Net_Worth)), Name(str(P_engie)), Name(str(P_fleury)), Name(str(P_ambev)), Name(str(P_itausa)), Name(str(P_Magalu)), Name(str(P_Enbr)), Name(str("%.2f" % Pre)), Name(str("%.2f" % pre5))<br>
+                <br>
+                Pname(Text00, 128, 130)<br>
+                Pname(Text10, 141, 190)<br>
+                Pname(Text20, 140, 250)<br>
+                Pname(Text30, 140, 310)<br>
+                Pname(Text40, 145, 370)<br>
+                Pname(Text50, 140, 430)<br>
+                Pname(Text60, 140, 490)<br>
+                Pname(Text70, 100, 550)<br>
+                Pname(Text80, 170, 550)<br>
+                #===============================<br>
+                while on:<br>
+                <br>
+                for event in pygame.event.get():<br>
+                if event.type == pygame.QUIT:<br>
+                on = False<br>
+                <br>
+                <br>
+                pygame.display.update()<br>
+                <br>
+                pygame.quit()<br>
+            </p>
+        </p>
+
+
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>
