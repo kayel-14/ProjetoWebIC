@@ -6,7 +6,7 @@ div.primeira {
     color: snow;
     float: left;
     position: fixed;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     text-align: center;
     border: solid;
     border-radius: 5%;
@@ -23,7 +23,7 @@ img.pfp
 }
 
 div.segunda {
-    font-size: 2vw;
+    font-size: 1.2vw;
     float: right;
     width: 82%;
     background: #101010;
