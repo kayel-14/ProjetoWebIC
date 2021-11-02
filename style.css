@@ -264,8 +264,9 @@ img.pfp {
         color: snow;
     }
     div.texto div{
-        width: 70%;
-        height: 10%;
+        width: 80%;
+        height: 5%;
+        font-size: 80%;
     }
 }
 
