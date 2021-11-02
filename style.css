@@ -34,12 +34,6 @@ div.rockets {
     position: absolute;
     bottom: 0;
 }
-div.Bubble {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 div.rockets img.rocket1{
     width: 10%;
     height: 10%;
@@ -152,9 +146,32 @@ img.pfp {
         justify-content: center;
         align-items: center;
     }
+    div.Bubble {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    div.Bubble div{
+        width: 30%;
+        font-size: 200%;
+    }
+    div.Bubble p{
+        position: relative;
+        top: 18px;
+        left: 10px;
+        color: snow;
+
+    }
+    div.Bubble a{
+        position: relative;
+        top: 18px;
+        left: 10px;
+        color: snow;
+    }
     div.Bubble img {
-        width: 70%;
-        height: 70%;
+        width: 40%;
+        height: 40%;
     }
 }
 @media (min-width:700px){
@@ -189,6 +206,28 @@ img.pfp {
     div.texto div{
         width: 35%;
         height: 35%;
+    }
+    div.Bubble {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    div.Bubble div{
+        width: 30%;
+    }
+    div.Bubble p{
+        position: relative;
+        top: 18px;
+        left: 10px;
+        color: snow;
+
+    }
+    div.Bubble a{
+        position: relative;
+        top: 18px;
+        left: 10px;
+        color: snow;
     }
 }
 @media (min-width:200px) and (max-width:699px) and (orientation: portrait){
@@ -230,10 +269,33 @@ img.pfp {
         justify-content: center;
         align-items: center;
     }
-    div.Bubble img{
-        width:70%;
-        height:70%;
+    div.Bubble {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+    div.Bubble div{
+        width: 30%;
+    }
+    div.Bubble p{
+        position: relative;
+        top: 18px;
+        left: 10px;
+        color: snow;
+
+    }
+    div.Bubble a{
+        position: relative;
+        top: 18px;
+        left: 10px;
+        color: snow;
+    }
+    div.Bubble img {
+        width: 40%;
+        height: 40%;
+    }
+
 }
 @media (min-width:200px) and (max-width:699px) and (orientation: landscape){
     div.About {
@@ -268,6 +330,33 @@ img.pfp {
         width: 80%;
         height: 5%;
         font-size: 80%;
+    }
+    div.Bubble {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    div.Bubble div{
+        width: 30%;
+        font-size: 100%;
+    }
+    div.Bubble p{
+        position: relative;
+        top: 18px;
+        left: 10px;
+        color: snow;
+
+    }
+    div.Bubble a{
+        position: relative;
+        top: 18px;
+        left: 10px;
+        color: snow;
+    }
+    div.Bubble img {
+        width: 20%;
+        height: 20%;
     }
 }
 
